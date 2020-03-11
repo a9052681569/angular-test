@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'userlist', component: UserlistComponent},
   { path: 'countries', component: CountriesComponent},
-  { path: 'user-page', loadChildren: './user-page/user-page.module#UserPageModule', canActivate: [UserPageGuard], canDeactivate: [UserPageGuard], canLoad: [UserPageGuard]},
+  { path: 'user-page', loadChildren: () => import('./user-page/user-page.module').then(m => m.UserPageModule), canActivate: [UserPageGuard], canDeactivate: [UserPageGuard], canLoad: [UserPageGuard]},
   { path: '**', component: NotFoundComponent }
 ];
 
