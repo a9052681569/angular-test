@@ -8,9 +8,7 @@ import { UserlistComponent } from './userlist/userlist.component';
 import { CountriesComponent } from './countries/countries.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
-import { UserPageComponent } from './user-page/user-page.component';
-import { UserPageInfoComponent } from './user-page/user-page-info/user-page-info.component';
-import { UserPageStateComponent } from './user-page/user-page-state/user-page-state.component';
+import { UserPageModule } from './user-page/user-page.module';
 import { NamePipe } from './name.pipe';
 
 
@@ -21,14 +19,12 @@ import { NamePipe } from './name.pipe';
     CountriesComponent,
     NotFoundComponent,
     HomeComponent,
-    UserPageComponent,
-    UserPageInfoComponent,
-    UserPageStateComponent,
     NamePipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
