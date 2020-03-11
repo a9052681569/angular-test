@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { UserlistComponent } from './userlist/userlist.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
-import { NamePipe } from './name.pipe';
+
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { NamePipe } from './name.pipe';
     UserlistComponent,
     NotFoundComponent,
     HomeComponent,
-    NamePipe
+    
   ],
   imports: [
     BrowserModule,

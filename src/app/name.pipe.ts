@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class NamePipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): string {
+  transform(value: string): string {
     return value.slice(0, 1).toUpperCase() + value.slice(1).toLowerCase();
   }
 

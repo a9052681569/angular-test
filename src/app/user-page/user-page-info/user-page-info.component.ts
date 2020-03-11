@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { Subscription } from 'rxjs'
 import { User } from '../../userlist/user';
@@ -8,7 +8,7 @@ import { User } from '../../userlist/user';
   templateUrl: './user-page-info.component.html',
   styleUrls: ['./user-page-info.component.css']
 })
-export class UserPageInfoComponent implements OnInit {
+export class UserPageInfoComponent {
 
   public user: User
   private querySubscription: Subscription
@@ -16,8 +16,6 @@ export class UserPageInfoComponent implements OnInit {
     this.querySubscription = route.queryParams.subscribe((queryParam: any) => {
       this.user = queryParam
     })
-  }
-  ngOnInit(): void {
   }
 
 }
