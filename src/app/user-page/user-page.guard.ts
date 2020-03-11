@@ -8,12 +8,12 @@ export interface ComponentCanDeactivate {
   canDeactivate: () => boolean | Observable<boolean>
 }
 export class UserPageGuard implements CanActivate, CanDeactivate<ComponentCanDeactivate>, CanLoad {
+  private checkName: string;
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      
-      const checkName = prompt("как зовут пользователя?")
-      if(checkName?.toLowerCase() === next.queryParams.name?.toLowerCase()) {
+      this.checkName = prompt("как зовут пользователя?")
+      if(this.checkName?.toLowerCase() === next.queryParams.name?.toLowerCase()) {
         return true
       } else {
         alert('отказано в доступе')
