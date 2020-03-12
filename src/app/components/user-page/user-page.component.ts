@@ -2,14 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { Subscription, Observable } from 'rxjs'
 import { User } from '../userlist/user';
+import { FunctionLog } from 'src/app/decorators/function-log/function-log';
+import { ComponentCanDeactivate } from './user-page.guard';
 
 @Component({
   selector: 'app-user-page',
   templateUrl: './user-page.component.html',
   styleUrls: ['./user-page.component.css']
 })
-export class UserPageComponent implements OnInit {
-  public saved: boolean = false
+export class UserPageComponent implements OnInit, ComponentCanDeactivate {
+  private saved: boolean;
   public user: User
   private querySubscription: Subscription
   constructor( private route: ActivatedRoute) {
@@ -17,12 +19,13 @@ export class UserPageComponent implements OnInit {
       this.user = queryParam
     })
   }
-  save() {
-    this.saved = true
+  @FunctionLog
+  public someFactAboutUser(name:string, age: number) {
+    return `А вы знали, что ${name} уже отметил свой ${age}'й день рождения`
   }
-  canDeactivate(): boolean | Observable<boolean> {
+  public canDeactivate(): boolean | Observable<boolean> {
     if (!this.saved) {
-      return confirm('Вы закончили с этим пользователемpiter?')
+      return confirm('Вы закончили с этим пользователем?')
     } else {
       return true
     }

@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 
-import { UserlistComponent } from './userlist/userlist.component';
+import { UserlistComponent } from './components/userlist/userlist.component';
 
-import { NotFoundComponent } from './not-found/not-found.component';
-import { HomeComponent } from './home/home.component';
-import { UserPageGuard } from './user-page/user-page.guard'
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HomeComponent } from './components/home/home.component';
+import { UserPageGuard } from './components/user-page/user-page.guard'
 
 
 
@@ -14,8 +14,8 @@ import { UserPageGuard } from './user-page/user-page.guard'
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'userlist', component: UserlistComponent},
-  { path: 'countries', loadChildren: () => import('./countries/countries.module').then(m => m.CountriesModule)},
-  { path: 'user-page', loadChildren: () => import('./user-page/user-page.module').then(m => m.UserPageModule), canActivate: [UserPageGuard], canDeactivate: [UserPageGuard], canLoad: [UserPageGuard]},
+  { path: 'countries', loadChildren: () => import('./components/countries/countries.module').then(m => m.CountriesModule)},
+  { path: 'user-page', loadChildren: () => import('./components/user-page/user-page.module').then(m => m.UserPageModule), canLoad: [UserPageGuard]},
   { path: '**', component: NotFoundComponent }
 ];
 

@@ -28,7 +28,6 @@ export class UserPageGuard implements CanActivate, CanDeactivate<ComponentCanDea
     return component?.canDeactivate ? component.canDeactivate() : true
   }
   canLoad(route: Route): Observable<boolean> | boolean {
-    
     return true
   }
 }
