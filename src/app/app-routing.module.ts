@@ -3,7 +3,6 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 
 import { UserlistComponent } from './components/userlist/userlist.component';
-
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserPageGuard } from './components/user-page/user-page.guard'

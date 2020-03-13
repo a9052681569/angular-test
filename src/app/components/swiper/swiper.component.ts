@@ -93,10 +93,13 @@ export class SwiperComponent implements OnInit {
   
   private getThisSwiperStarted(): void {
     const swiperBox: HTMLElement = document.querySelector('.swiper__box')
+
+
     const mouseStartsY$: Observable<number> = this.getMouseY(fromEvent(swiperBox, 'mousedown') as Observable<MouseEvent>)
     const mouseEndsY$: Observable<number> = this.getMouseY(fromEvent(swiperBox, 'mouseup') as Observable<MouseEvent>)
     const mouseStartsX$: Observable<number> = this.getMouseX(fromEvent(swiperBox, 'mousedown') as Observable<MouseEvent>)
     const mouseEndsX$: Observable<number> = this.getMouseX(fromEvent(swiperBox, 'mouseup') as Observable<MouseEvent>)
+    
     const mouseSwipeDirection$: Observable<string> = this.swipeDirection(zip(mouseStartsX$, mouseEndsX$, mouseStartsY$, mouseEndsY$))
 
     mouseSwipeDirection$.subscribe((swipeDirection: string) => {
