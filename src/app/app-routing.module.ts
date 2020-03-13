@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'userlist', component: UserlistComponent},
   { path: 'countries', loadChildren: () => import('./components/countries/countries.module').then(m => m.CountriesModule)},
   { path: 'user-page', loadChildren: () => import('./components/user-page/user-page.module').then(m => m.UserPageModule), canLoad: [UserPageGuard]},
+  { path: 'swiper', loadChildren: () => import('./components/swiper/swiper.module').then(m => m.SwiperModule)},
   { path: '**', component: NotFoundComponent }
 ];
 
