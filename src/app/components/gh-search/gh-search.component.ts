@@ -12,7 +12,6 @@ export class GhSearchComponent implements OnInit {
   repositories: object[];
   isLoading: boolean;
   isNoSuchRepo: boolean;
-  noSuchRepo: string;
   
   getRes(): void {
     fromEvent(document.querySelector('.github-input'), 'input')

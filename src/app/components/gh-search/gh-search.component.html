@@ -13,7 +13,7 @@
             <p class="repo-card__subtitle">{{repo.description}}</p>
             <div class="repo-card__description">
                 <span class="repo-card__stars"><span class="bold-text">Stars:&#8194;</span>{{repo.stargazers_count}}</span>
-                <span class="repo-card__language"><span class="bold-text">Language:&#8194;</span>{{repo.language}}</span>
+                <span *ngIf='repo.language' class="repo-card__language"><span class="bold-text">Language:&#8194;</span>{{repo.language}}</span>
             </div>
         </a>
     </div>
