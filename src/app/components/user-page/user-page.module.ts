@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserPageComponent } from './user-page.component';
 import { UserPageInfoComponent } from './user-page-info/user-page-info.component';
 import { UserPageStateComponent } from './user-page-state/user-page-state.component';
-import { NamePipe } from '../../pipes/name/name.pipe';
 import { UserPageGuard } from './user-page.guard';
 
 
@@ -24,8 +23,7 @@ const userPageRoutes: Routes = [
   declarations: [
     UserPageComponent,
     UserPageInfoComponent,
-    UserPageStateComponent,
-    NamePipe
+    UserPageStateComponent
   ],
   imports: [
     CommonModule,

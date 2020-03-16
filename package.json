@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prod-build": "ng build --prod --base-href 'https://a9052681569.github.io/angular-test/'",
+    "prod-build": "ng build --prod --base-href https://a9052681569.github.io/angular-test/",
     "deploy": "gh-pages -d dist/angular-test"
   },
   "private": true,

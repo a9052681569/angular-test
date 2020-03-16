@@ -16,11 +16,12 @@ const routes: Routes = [
   { path: 'countries', loadChildren: () => import('./components/countries/countries.module').then(m => m.CountriesModule)},
   { path: 'user-page', loadChildren: () => import('./components/user-page/user-page.module').then(m => m.UserPageModule), canLoad: [UserPageGuard]},
   { path: 'swiper', loadChildren: () => import('./components/swiper/swiper.module').then(m => m.SwiperModule)},
+  { path: 'gh-search', loadChildren: () => import('./components/gh-search/gh-search.module').then(m => m.GhSearchModule)},
   { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule],
   providers: [UserPageGuard]
 })

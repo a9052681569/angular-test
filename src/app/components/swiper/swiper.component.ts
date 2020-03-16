@@ -41,14 +41,14 @@ export class SwiperComponent implements OnInit {
 
     this.bgColor = this.colorsY[this.countY]
   }
-  private swipeDesider(direction: string) {
+  private swipeDesider(direction: string): void {
     direction === 'right' || direction === 'left' ? this.xChanger(direction) : this.yChanger(direction)
   }
 
   private getMouseX(click$: Observable<MouseEvent>): Observable<number> {
     return click$
       .pipe(
-        map(({clientX}: MouseEvent) => clientX)
+        map(({clientX}: MouseEvent) => clientX),
       )
   }
   private getMouseY(click$: Observable<MouseEvent>): Observable<number> {
