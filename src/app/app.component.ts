@@ -1,13 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, fromEvent, zip } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { routeChangeAnimation } from './animations/route-change/route-change.animation';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [routeChangeAnimation]
 })
 export class AppComponent implements OnInit {
+  getRouteAnimationState(outlet: RouterOutlet) {
+    return (
+      outlet &&
+      outlet.activatedRouteData &&
+      outlet.activatedRouteData['animation']
+    )
+  }
   ngOnInit() {
     
   }
