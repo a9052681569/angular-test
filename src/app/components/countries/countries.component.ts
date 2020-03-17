@@ -31,7 +31,16 @@ export class CountriesComponent implements OnInit {
     this.dataService.deleteData(id)
   }
   public animationLog(s: AnimationEvent) {
+<<<<<<< HEAD
     console.log('анимируем')
+=======
+    if(s.phaseName === 'done') {
+      console.log('конец анимации')
+    }
+    if(s.phaseName === 'start') {
+      console.log('начало анимации')
+    }
+>>>>>>> 130e1123d6bbaad47a3b1ca1087abfde3f983e9a
   }
   ngOnInit(): void {
     this.countries = this.dataService.getData()
