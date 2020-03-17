@@ -6,6 +6,8 @@ import { UserPageComponent } from './user-page.component';
 import { UserPageInfoComponent } from './user-page-info/user-page-info.component';
 import { UserPageStateComponent } from './user-page-state/user-page-state.component';
 import { UserPageGuard } from './user-page.guard';
+import { NamePipe } from 'src/app/pipes/name/name.pipe';
+
 
 
 
@@ -21,6 +23,7 @@ const userPageRoutes: Routes = [
 
 @NgModule({
   declarations: [
+    NamePipe,
     UserPageComponent,
     UserPageInfoComponent,
     UserPageStateComponent

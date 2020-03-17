@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,9 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  @ViewChild('homeText')
+  homeParagraph: ElementRef
 
+  public home: string = 'привет дом'
   constructor() { }
 
+  change() {
+    console.log(this.homeParagraph.nativeElement.textContent)
+    this.home = 'пока дом'
+  }
   ngOnInit(): void {
   }
 

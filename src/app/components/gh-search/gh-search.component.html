@@ -1,6 +1,6 @@
 <div>
     <h2>введи запрос и найдешь репозитории на gh</h2>
-    <input class="github-input" type="text">
+    <input class="github-input" type="text" #searchInput>
     <p *ngIf='count > 0'>Всего нашлось {{count}} репозиториев</p>
     <div class="result-container">
         <p *ngIf='isNoSuchRepo'>не нашлось репозиториев с таким названием</p>

@@ -12,7 +12,7 @@ import { ComponentCanDeactivate } from './user-page.guard';
 })
 export class UserPageComponent implements OnInit, ComponentCanDeactivate {
   private saved: boolean;
-  public user: User
+  public user: User;
   private querySubscription: Subscription
   constructor( private route: ActivatedRoute) {
     this.querySubscription = route.queryParams.subscribe((queryParam: any) => {
