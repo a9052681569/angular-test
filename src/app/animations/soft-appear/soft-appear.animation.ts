@@ -2,20 +2,22 @@ import { trigger, transition, style, group, animate, keyframes } from '@angular/
 
 export const softAppear = trigger('softAppear', [
     transition(':enter', [
-      style({opacity: 0, transform: 'translateX(100px)'}),
+      style({opacity: 0, transform: 'translateY(300px)'}),
       group([
-        animate('0.3s', style({ transform: 'translateX(0)' })),
-        animate('0.2s', style({ opacity: 1 }))
+        animate('.3s', style({ transform: 'translateY(0)' })),
+        animate('.2s', style({ opacity: 1 }))
       ])
     ]),
     transition(':leave', [
       group([
-        animate('0.2s', keyframes([
+        animate('.2s', style({ height: 0 })),
+        animate('.3s', keyframes([
           style({ color: 'red', offset: 0 }),
           style({ color: 'green', offset: 0.67 }),
           style({ color: 'blue', offset: 1 })
         ])),
-        animate('0.2s', style({ transform: 'translateX(100px)'})),
-        animate('0.1s', style({ opacity: 1 }))
-      ])])
+        animate('.3s', style({ transform: 'translateX(300px)'})),
+        animate('.2s', style({ opacity: 0 }))
+      ])
+    ])
   ])

@@ -14,6 +14,5 @@ export class AppComponent implements OnInit {
     return (outlet.activatedRouteData['animation'])
   }
   ngOnInit() {
-    
   }
 }
