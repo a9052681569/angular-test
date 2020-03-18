@@ -1,19 +1,18 @@
-import { trigger, transition, style, query, group, animateChild, animate } from '@angular/animations';
+import { trigger, transition, style, query, animate, sequence } from '@angular/animations';
 
 export const routeChangeAnimation = trigger('routeChangeAnimation', [
-    transition('userlist <=> countries', [
+    transition('* <=> *', [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
-          opacity: 0
+          position: 'absolute',
+          width: '100%'
         })
-      ]),
-      query(':enter', [style({ opacity: 0 })]),
-      query(':leave', animateChild()),
-      group([
-        query(':leave', [animate('300ms ease-out', style({ opacity: 0 }))]),
-        query(':enter', [animate('300ms ease-out', style({ opacity: 1 }))])
-      ]),
-      query(':enter', animateChild())
+      ], { optional: true }),
+      query(':enter', [style({ opacity: 0 })], { optional: true }),
+      sequence([
+        query(':leave', [animate('.2s ease-out', style({ opacity: 0 }))], { optional: true }),
+        query(':enter', [animate('.2s ease-out', style({ opacity: 1 }))], { optional: true })
+      ])
     ])
   ])

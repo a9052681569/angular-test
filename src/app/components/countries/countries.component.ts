@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Country } from 'src/app/types/country/country';
 import { CountryDataService } from 'src/app/services/country-data/country-data.service';
-import { trigger, state, style, transition, animate, keyframes, group } from '@angular/animations';
 import { softAppear } from 'src/app/animations/soft-appear/soft-appear.animation';
 
 @Component({
@@ -31,16 +30,7 @@ export class CountriesComponent implements OnInit {
     this.dataService.deleteData(id)
   }
   public animationLog(s: AnimationEvent) {
-<<<<<<< HEAD
     console.log('анимируем')
-=======
-    if(s.phaseName === 'done') {
-      console.log('конец анимации')
-    }
-    if(s.phaseName === 'start') {
-      console.log('начало анимации')
-    }
->>>>>>> 130e1123d6bbaad47a3b1ca1087abfde3f983e9a
   }
   ngOnInit(): void {
     this.countries = this.dataService.getData()
