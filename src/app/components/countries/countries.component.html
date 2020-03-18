@@ -15,7 +15,7 @@
     (@softAppear.start)="animationLog($event)"
     (@softAppear.done)="animationLog($event)" 
     *ngFor='let country of countries' 
-    style="display: flex; margin: 10px;"
+    style="display: flex; padding: 10px;"
     >
         <p style="margin: 0;">{{country.name}}</p>
         <button (click)='deleteCountry(country.id)'>-</button>

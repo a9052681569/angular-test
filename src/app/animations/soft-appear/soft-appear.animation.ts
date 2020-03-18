@@ -10,7 +10,7 @@ export const softAppear = trigger('softAppear', [
     ]),
     transition(':leave', [
       group([
-        animate('.2s', style({ height: 0 })),
+        animate('.2s', style({ height: 0, padding: 0, margin: 0, border: 0 })),
         animate('.3s', keyframes([
           style({ color: 'red', offset: 0 }),
           style({ color: 'green', offset: 0.67 }),
