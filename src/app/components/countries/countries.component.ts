@@ -3,8 +3,6 @@ import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/fo
 import { Country } from 'src/app/types/country/country';
 import { CountryDataService } from 'src/app/services/country-data/country-data.service';
 import { softAppear } from 'src/app/animations/soft-appear/soft-appear.animation';
-import { from } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-countries',
