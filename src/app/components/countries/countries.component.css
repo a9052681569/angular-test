@@ -1,0 +1,17 @@
+.form__control {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form__control-input.ng-invalid.ng-dirty, .form__control-input.ng-invalid.ng-touched {
+    outline-color: red;
+}
+
+.form__control-input.ng-invalid.ng-touched {
+    border-color: red;
+}
+
+.form__control-input.ng-valid.ng-dirty {
+    outline-color: green;
+}

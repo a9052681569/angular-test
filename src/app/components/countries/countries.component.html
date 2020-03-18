@@ -1,16 +1,25 @@
-<form [formGroup]='countryForm' novalidate (ngSubmit)='addCountry()'>
-    <input formControlName='name'>
+<form [formGroup]='countryForm' novalidate (ngSubmit)='submit()' class="form">
+    <div class="form__control">
+        <input formControlName='name' class="form__control-input">
+        <div *ngIf='_name.invalid && (_name.dirty || _name.touched)' class="form__error">
+            <span *ngIf='_name.errors?.required'>это поле должно быть заполнено</span>
+            <span *ngIf='_name.errors?.pattern'>Введите название страны на русском</span>
+        </div>
+    </div>
     <button>добавить</button>
 </form>
-
-<div 
+<ul>
+    <li 
+    class="item"
     @softAppear
     (@softAppear.start)="animationLog($event)"
-    (@softAppear.done)="animationLog($event)"
+    (@softAppear.done)="animationLog($event)" 
     *ngFor='let country of countries' 
     style="display: flex; margin: 10px;"
->
-    <p style="margin: 0;">{{country.name}}</p>
-    <button (click)='deleteCountry(country.id)'>-</button>
-</div>
+    >
+        <p style="margin: 0;">{{country.name}}</p>
+        <button (click)='deleteCountry(country.id)'>-</button>
+    </li>
+</ul>
+
 
