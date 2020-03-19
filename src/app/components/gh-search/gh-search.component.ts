@@ -19,11 +19,7 @@ export class GhSearchComponent implements AfterViewInit {
   public count: number = 0;
   public repositories: object[];
   public isLoading: boolean;
-<<<<<<< HEAD
   public requestErrMessage: string
-=======
-  public requestErrMessage: string = 'Ошибка'
->>>>>>> e4e6eebf1c7bf509c34c721d527c9f86f67da24e
   public isRequestErr: boolean
   
   constructor(private searchService: GhSearchService) {}
