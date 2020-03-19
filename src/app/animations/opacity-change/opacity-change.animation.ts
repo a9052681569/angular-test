@@ -8,4 +8,4 @@ export const opacityChangeAnimation = trigger('opacityChangeAnimation', [
     transition(':leave', [
         animate('.2s', style({ opacity: 0 }))
     ])
-  ])
+  ]);

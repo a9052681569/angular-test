@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
-import { Subscription, Observable } from 'rxjs'
+import { ActivatedRoute } from '@angular/router';
+import { Subscription, Observable } from 'rxjs';
 import { User } from '../userlist/user';
 import { FunctionLog } from 'src/app/decorators/function-log/function-log';
 import { ComponentCanDeactivate } from './user-page.guard';
@@ -13,25 +13,23 @@ import { ComponentCanDeactivate } from './user-page.guard';
 export class UserPageComponent implements OnInit, ComponentCanDeactivate {
   private saved: boolean;
   public user: User;
-  private querySubscription: Subscription
+  private querySubscription: Subscription;
   constructor( private route: ActivatedRoute) {
     this.querySubscription = route.queryParams.subscribe((queryParam: any) => {
-      this.user = queryParam
-    })
+      this.user = queryParam;
+    });
   }
   @FunctionLog
-  public someFactAboutUser(name:string, age: number) {
-    return `А вы знали, что ${name} уже отметил свой ${age}'й день рождения`
+  public someFactAboutUser(name: string, age: number) {
+    return `А вы знали, что ${name} уже отметил свой ${age}'й день рождения`;
   }
   public canDeactivate(): boolean | Observable<boolean> {
     if (!this.saved) {
-      return confirm('Вы закончили с этим пользователем?')
+      return confirm('Вы закончили с этим пользователем?');
     } else {
-      return true
+      return true;
     }
   }
   ngOnInit(): void {
-    
   }
-
 }

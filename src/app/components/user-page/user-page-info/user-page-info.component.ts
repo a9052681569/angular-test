@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
-import { Subscription } from 'rxjs'
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { User } from '../../userlist/user';
 
 @Component({
@@ -10,12 +10,12 @@ import { User } from '../../userlist/user';
 })
 export class UserPageInfoComponent {
 
-  public user: User
-  private querySubscription: Subscription
+  public user: User;
+  private querySubscription: Subscription;
   constructor( private route: ActivatedRoute) {
     this.querySubscription = route.queryParams.subscribe((queryParam: any) => {
-      this.user = queryParam
-    })
+      this.user = queryParam;
+    });
   }
 
 }

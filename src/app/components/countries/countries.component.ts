@@ -12,39 +12,37 @@ import { softAppear } from 'src/app/animations/soft-appear/soft-appear.animation
   animations: [softAppear]
 })
 export class CountriesComponent implements OnInit {
-  public countryForm: FormGroup
-  public countries: Country[]
+  public countryForm: FormGroup;
+  public countries: Country[];
 
   constructor(private dataService: CountryDataService, private formBuilder: FormBuilder) {
     this.countryForm = formBuilder.group({
       name: [null, [Validators.required, Validators.pattern(/^[а-яё\s\-]+$/i)]]
-    })
+    });
   }
 
   private addCountry(): void {
-    this.dataService.addData(this.countryForm.get('name').value)
+    this.dataService.addData(this.countryForm.get('name').value);
   }
   public deleteCountry(id: number): void {
-    this.dataService.deleteData(id)
+    this.dataService.deleteData(id);
   }
   public animationLog(s: AnimationEvent): void {
-    console.log('анимируем')
+    console.log('анимируем');
   }
   public submit() {
-    if(this.countryForm.valid) {
-      this.addCountry()
-      this.countryForm.reset()
+    if (this.countryForm.valid) {
+      this.addCountry();
+      this.countryForm.reset();
     } else {
-      this._name.markAsTouched()
+      this._name.markAsTouched();
     }
   }
   ngOnInit(): void {
-    this.countries = this.dataService.getData()
+    this.countries = this.dataService.getData();
   }
-  
 
   get _name(): AbstractControl {
-    return this.countryForm.get('name')
+    return this.countryForm.get('name');
   }
-  
 }

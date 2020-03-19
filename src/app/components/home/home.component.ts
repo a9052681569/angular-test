@@ -7,14 +7,14 @@ import { Component, OnInit, ViewChild, ElementRef, ViewRef, ViewContainerRef } f
 })
 export class HomeComponent implements OnInit {
   @ViewChild('homeText', {read: ElementRef})
-  homeParagraph: ElementRef
+  homeParagraph: ElementRef;
 
-  public home: string = 'привет дом'
+  public home = 'привет дом';
   constructor() { }
 
   change() {
-    console.log(this.homeParagraph)
-    this.home = 'пока дом'
+    console.log(this.homeParagraph);
+    this.home = 'пока дом';
   }
   ngOnInit(): void {
   }

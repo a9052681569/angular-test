@@ -1,19 +1,19 @@
 <div>
     <h2>введи запрос и найдешь репозитории на gh</h2>
-    <input class="github-input" type="text" #searchInput>
+    <input class='github-input' type='text' #searchInput>
     <p *ngIf='count > 0'>Всего нашлось {{count}} репозиториев</p>
-    <div class="result-container">
+    <div class='result-container'>
         <p @opacityChangeAnimation *ngIf='isRequestErr'>{{requestErrMessage}}</p>
-        <div @opacityChangeAnimation *ngIf='isLoading' class="preloader__container">
-            <div class="preloader"></div>
+        <div @opacityChangeAnimation *ngIf='isLoading' class='preloader__container'>
+            <div class='preloader'></div>
         </div>
-        <a @opacityChangeAnimation *ngFor='let repo of repositories' [href]="repo.html_url" class="repo-card" target="blank">
-            <h3 class="repo-card__title">{{repo.name}}</h3>
-            <img [src]="repo?.owner?.avatar_url" alt="author avatar" class="repo-card__avatar">
-            <p class="repo-card__subtitle">{{repo.description}}</p>
-            <div class="repo-card__description">
-                <span class="repo-card__stars"><span class="bold-text">Stars:&#8194;</span>{{repo.stargazers_count}}</span>
-                <span *ngIf='repo.language' class="repo-card__language"><span class="bold-text">Language:&#8194;</span>{{repo.language}}</span>
+        <a @opacityChangeAnimation *ngFor='let repo of repositories' [href]='repo.html_url' class='repo-card' target='blank'>
+            <h3 class='repo-card__title'>{{repo.name}}</h3>
+            <img [src]='repo?.owner?.avatar_url' alt='author avatar' class='repo-card__avatar'>
+            <p class='repo-card__subtitle'>{{repo.description}}</p>
+            <div class='repo-card__description'>
+                <span class='repo-card__stars'><span class='bold-text'>Stars:&#8194;</span>{{repo.stargazers_count}}</span>
+                <span *ngIf='repo.language' class='repo-card__language'><span class='bold-text'>Language:&#8194;</span>{{repo.language}}</span>
             </div>
         </a>
     </div>

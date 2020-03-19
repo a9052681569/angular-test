@@ -8,6 +8,6 @@ export class GhSearchService {
   constructor(private http: HttpClient) {   }
 
   public repoRequest(repoName: string): Observable<object> {
-    return this.http.get(`https://api.github.com/search/repositories?q=${repoName}`)
+    return this.http.get(`https://api.github.com/search/repositories?q=${repoName}`);
   }
 }

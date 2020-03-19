@@ -10,8 +10,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   public getRouteAnimationState(outlet: RouterOutlet): string {
-    
-    return (outlet.activatedRouteData['animation'])
+    return (outlet.activatedRouteData.animation);
   }
   ngOnInit() {
   }

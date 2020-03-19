@@ -1,23 +1,24 @@
+import { User } from './user';
 
-export const users = [
+export const users: User[] = [
     {
-        "name": "Bob",
-        "age": 28
+        name: 'Bob',
+        age: 28
     },
     {
-        "name": "piter",
-        "age": 21
+        name: 'piter',
+        age: 21
     },
     {
-        "name": "andrew",
-        "age": 38
+        name: 'andrew',
+        age: 38
     },
     {
-        "name": "Bobby",
-        "age": 282
+        name: 'Bobby',
+        age: 282
     },
     {
-        "name": "Bob",
-        "age": 42
+        name: 'Bob',
+        age: 42
     }
-]
+];
