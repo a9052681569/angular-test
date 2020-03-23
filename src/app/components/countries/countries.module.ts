@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { CountriesComponent } from './countries.component';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    PipesModule
   ]
 })
 export class CountriesModule { }

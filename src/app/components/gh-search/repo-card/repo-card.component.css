@@ -1,0 +1,17 @@
+.repo-card {
+    text-decoration: none;
+    color: #000;
+}
+
+.repo-card__description {
+    display: flex;
+}
+
+.repo-card__avatar {
+    width: 272px;
+    height: 272px;
+}
+
+.repo-card__stars {
+    margin-right: 10px;
+}

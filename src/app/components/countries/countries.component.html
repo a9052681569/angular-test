@@ -17,7 +17,7 @@
     *ngFor='let country of countries' 
     style='display: flex; padding: 10px;'
     >
-        <p style='margin: 0;'>{{country.name}}</p>
+        <p style='margin: 0;'>{{country.name | name}}</p>
         <button (click)='deleteCountry(country.id)'>-</button>
     </li>
 </ul>

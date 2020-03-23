@@ -4,7 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { GhSearchComponent } from './gh-search.component';
-import { from } from 'rxjs';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { RepoCardComponent } from './repo-card/repo-card.component';
+import { NoticeDataService } from 'src/app/services/notice-data/notice-data.service';
+import { GhSearchService } from 'src/app/services/gh-search/gh-search.service';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 
 const routes: Routes = [
@@ -12,11 +16,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GhSearchComponent],
+  declarations: [GhSearchComponent, RepoCardComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    HttpClientModule
-  ]
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    PipesModule
+  ],
+  providers: [GhSearchService, NoticeDataService]
 })
 export class GhSearchModule { }

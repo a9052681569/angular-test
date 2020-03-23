@@ -6,7 +6,7 @@ import { UserPageComponent } from './user-page.component';
 import { UserPageInfoComponent } from './user-page-info/user-page-info.component';
 import { UserPageStateComponent } from './user-page-state/user-page-state.component';
 import { UserPageGuard } from './user-page.guard';
-import { NamePipe } from 'src/app/pipes/name/name.pipe';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 const userPageChildRoutes: Routes = [
   { path: 'user-page-info', component: UserPageInfoComponent},
@@ -17,14 +17,14 @@ const userPageRoutes: Routes = [
 ];
 @NgModule({
   declarations: [
-    NamePipe,
     UserPageComponent,
     UserPageInfoComponent,
     UserPageStateComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(userPageRoutes)
+    RouterModule.forChild(userPageRoutes),
+    PipesModule
   ],
   providers: [UserPageGuard]
 })
